@@ -1,0 +1,23 @@
+:root{
+    --background-color:#D0D6DB;
+}
+
+.shoppingBg{
+    background-color: var(--background-color);
+    padding: 6rem 0 1rem 0;
+}
+
+.shoppingBg .navForShopping{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoppingBg .navForShopping li:not(.noMargin){
+    list-style: none;
+    margin-left: 20px;
+}
+
+.shoppingBg .navForShopping li a{
+    text-decoration: none;
+}
