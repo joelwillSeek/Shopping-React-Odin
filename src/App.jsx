@@ -1,8 +1,17 @@
-import { useState } from "react";
-import "./App.css";
+import { useRef, useState } from "react";
 import Chart from "./components/Chart";
-import { Link, NavLink, Route, Routes } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Navigate,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import AllProducts from "./components/AllProducts";
+import Home from "./components/Home";
+import ShoppingPage from "./components/ShoppingPage";
+import "./styles/App.css";
 
 let App = () => {
   let chartContainerRef = useRef();
@@ -59,7 +68,7 @@ let App = () => {
       ></Chart>
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route index path="/" element={<Home />}></Route>
         <Route path="shopping" element={<ShoppingPage />}>
           <Route
             index
@@ -134,6 +143,7 @@ let App = () => {
             }
           ></Route>
         </Route>
+        <Route path="*" element={<Navigate to={"/"}></Navigate>}></Route>
       </Routes>
     </>
   );
